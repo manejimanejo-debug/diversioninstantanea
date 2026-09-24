@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Diversión Instantánea | Publicidad & Marketing Digital</title>
+
+  <meta
+    name="description"
+    content="Diversión Instantánea: publicidad digital, marketing, contenido creativo y estrategias para ayudar a marcas y emprendimientos a crecer online."
+  >
+
+  <meta name="theme-color" content="#050505">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050505;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    :root {
+      --green: #19ff75;
+      --green-dark: #0bb957;
+      --gold: #f6c84c;
+      --gold-light: #ffe28a;
+      --black: #050505;
+      --card: #101010;
+      --gray: #a8a8a8;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(25,255,117,0.10), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(246,200,76,0.10), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(25,255,117,0.05), transparent 35%);
+      z-index: -2;
+    }
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+      z-index: -1;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(5,5,5,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      height: 82px;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--gold), #8f680d);
+      color: #050505;
+      font-weight: 900;
+      font-size: 20px;
+      box-shadow:
+        0 0 20px rgba(246,200,76,0.25),
+        inset 0 0 10px rgba(255,255,255,0.4);
+    }
+
+    .brand-text {
+      font-weight: 900;
+      font-size: 17px;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-text span {
+      color: var(--green);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #cfcfcf;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    .nav-button {
+      padding: 12px 19px;
+      border-radius: 999px;
+      background: var(--green);
+      color: #031208;
+      font-weight: 800;
+      box-shadow: 0 0 25px rgba(25,255,117,0.20);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 25px 90px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(25,255,117,0.07);
+      border: 1px solid rgba(25,255,117,0.20);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    h1 {
+      font-size: clamp(48px, 6vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    h1 span {
+      background: linear-gradient(
+        100deg,
+        var(--gold-light),
+        var(--gold),
+        var(--green)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-description {
+      color: #bdbdbd;
+      max-width: 620px;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 25px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--green), #0cc75a);
+      color: #031208;
+      box-shadow: 0 12px 40px rgba(25,255,117,0.16);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 45px rgba(25,255,117,0.25);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.14);
+      color: white;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-container {
+      width: min(440px, 85vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .logo-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid rgba(246,200,76,0.8);
+      box-shadow:
+        0 0 40px rgba(246,200,76,0.14),
+        inset 0 0 40px rgba(25,255,117,0.08);
+    }
+
+    .logo-ring::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(25,255,117,0.5);
+    }
+
+    .logo-center {
+      width: 76%;
+      height: 76%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(246,200,76,0.13), transparent 35%),
+        radial-gradient(circle at 50% 70%, rgba(25,255,117,0.10), transparent 40%),
+        #080808;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 0 80px rgba(25,255,117,0.10);
+    }
+
+    .logo-center h2 {
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 900;
+      font-style: italic;
+      background: linear-gradient(135deg, #fff0a8, var(--gold));
+      -webkit-background-clip: text;
+      color: transparent;
+      line-height: 1;
+    }
+
+    .logo-center p {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 900;
+      font-style: italic;
+      color: white;
+      margin-top: 4px;
+    }
+
+    .logo-center small {
+      margin-top: 15px;
+      color: var(--green);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .floating-card {
+      position: absolute;
+      padding: 14px 18px;
+      background: rgba(15,15,15,0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 15px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    .floating-card strong {
+      display: block;
+      color: var(--gold);
+      font-size: 18px;
+      margin-bottom: 3px;
+    }
+
+    .floating-card span {
+      color: #999;
+      font-size: 11px;
+    }
+
+    .card-1 {
+      left: -10px;
+      top: 18%;
+    }
+
+    .card-2 {
+      right: -15px;
+      bottom: 18%;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 110px 25px;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin-bottom: 55px;
+    }
+
+    .section-label {
+      color: var(--green);
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(35px, 5vw, 55px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      color: #9d9d9d;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 32px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.055),
+        rgba(255,255,255,0.015)
+      );
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      transition: 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: var(--green);
+      opacity: 0.05;
+      filter: blur(45px);
+      right: -30px;
+      top: -30px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(25,255,117,0.30);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      margin-bottom: 25px;
+      background: rgba(25,255,117,0.08);
+      border: 1px solid rgba(25,255,117,0.15);
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 13px;
+    }
+
+    .service-card p {
+      color: #989898;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: rgba(255,255,255,0.018);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-visual {
+      min-height: 430px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(25,255,117,0.18), transparent 25%),
+        radial-gradient(circle at 70% 70%, rgba(246,200,76,0.16), transparent 25%),
+        #090909;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-visual::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 1px solid rgba(25,255,117,0.30);
+      box-shadow: 0 0 80px rgba(25,255,117,0.12);
+    }
+
+    .about-symbol {
+      position: relative;
+      font-size: 100px;
+      font-weight: 900;
+      font-style: italic;
+      background: linear-gradient(135deg, var(--gold), white);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .about-content h2 {
+      font-size: clamp(35px, 4vw, 53px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .about-content h2 span {
+      color: var(--green);
+    }
+
+    .about-content > p {
+      color: #9d9d9d;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #d8d8d8;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .check-icon {
+      min-width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(25,255,117,0.12);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .process-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.025);
+      position: relative;
+    }
+
+    .number {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 35px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 12px;
+      font-size: 19px;
+    }
+
+    .process-card p {
+      color: #8f8f8f;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* =========================
+       BENEFITS
+    ========================= */
+
+    .benefits {
+      padding-top: 60px;
+    }
+
+    .benefits-box {
+      border-radius: 30px;
+      padding: 55px;
+      background:
+        radial-gradient(circle at 10% 50%, rgba(25,255,117,0.10), transparent 30%),
+        radial-gradient(circle at 90% 50%, rgba(246,200,76,0.10), transparent 30%),
+        #0b0b0b;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .benefit strong {
+      display: block;
+      font-size: 32px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .benefit span {
+      color: #929292;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 120px 25px;
+    }
+
+    .cta-box {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      padding: 75px 35px;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(25,255,117,0.15), transparent 45%),
+        #0b0b0b;
+      border: 1px solid rgba(25,255,117,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(38px, 5vw, 60px);
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: auto auto 30px;
+      color: #999;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 21px;
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      padding: 0 21px 21px;
+      color: #929292;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 50px 25px 30px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: #030303;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-description {
+      color: #777;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      color: #888;
+      font-size: 13px;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 35px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: #555;
+      font-size: 12px;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      color: white;
+      font-size: 27px;
+      z-index: 999;
+      box-shadow: 0 8px 35px rgba(37,211,102,0.35);
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 950px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero-container,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        margin-top: 30px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-visual {
+        min-height: 350px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .nav {
+        height: 70px;
+      }
+
+      .brand-text {
+        font-size: 14px;
+      }
+
+      .brand-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      h1 {
+        font-size: 49px;
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 80px 20px;
+      }
+
+      .services-grid,
+      .process-grid,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-box {
+        padding: 35px 25px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .cta {
+        padding: 80px 20px;
+      }
+
+      .cta-box {
+        padding: 55px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="grid-bg"></div>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <div class="nav">
+
+      <a href="#inicio" class="brand">
+        <div class="brand-icon">D</div>
+
+        <div class="brand-text">
+          Diversión <span>Instantánea</span>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#faq">FAQ</a>
+
+        <a href="#contacto" class="nav-button">
+          Contactanos
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Publicidad & Marketing Digital
+          </div>
+
+          <h1>
+            Hacemos que tu
+            <span>marca destaque.</span>
+          </h1>
+
+          <p class="hero-description">
+            Ayudamos a marcas y emprendimientos a potenciar su presencia
+            online mediante publicidad digital, contenido creativo y
+            estrategias pensadas para llegar a más personas.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#contacto" class="btn btn-primary">
+              🚀 Quiero potenciar mi marca
+            </a>
+
+            <a href="#servicios" class="btn btn-secondary">
+              Ver servicios
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+          <div class="logo-container">
+
+            <div class="logo-ring"></div>
+
+            <div class="logo-center">
+
+              <h2>Diversión</h2>
+
+              <p>Instantánea</p>
+
+              <small>Marketing Digital</small>
+
+            </div>
+
+          </div>
+
+          <div class="floating-card card-1">
+            <strong>Creatividad</strong>
+            <span>Contenido que destaca</span>
+          </div>
+
+          <div class="floating-card card-2">
+            <strong>Estrategia</strong>
+            <span>Decisiones con propósito</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="servicios">
+
+      <div class="section-container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Lo que hacemos
+          </div>
+
+          <h2 class="section-title">
+            Todo lo que necesitás para
+            <span style="color:#19ff75;">crecer online.</span>
+          </h2>
+
+          <p class="section-description">
+            Combinamos creatividad, publicidad y estrategia para crear
+            una presencia digital sólida y profesional.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <div class="service-card">
+
+            <div class="service-icon">📢</div>
+
+            <h3>Publicidad Digital</h3>
+
+            <p>
+              Diseñamos campañas publicitarias orientadas a conectar
+              tu marca con personas realmente interesadas en lo que
+              ofrecés.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">🎨</div>
+
+            <h3>Contenido Creativo</h3>
+
+            <p>
+              Creamos piezas visuales modernas y atractivas para que
+              tu negocio tenga una imagen profesional y reconocible.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">📱</div>
+
+            <h3>Redes Sociales</h3>
+
+            <p>
+              Te ayudamos a construir una presencia consistente en
+              redes sociales y a comunicar mejor lo que hace tu marca.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">🎯</div>
+
+            <h3>Estrategia Digital</h3>
+
+            <p>
+              Analizamos objetivos, público y oportunidades para
+              desarrollar estrategias adaptadas a cada proyecto.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">💡</div>
+
+            <h3>Identidad de Marca</h3>
+
+            <p>
+              Trabajamos la comunicación visual y conceptual para
+              lograr una identidad coherente y memorable.
+            </p>
+
+          </div>
+
+
+          <div class="service-card">
+
+            <div class="service-icon">📈</div>
+
+            <h3>Optimización</h3>
+
+            <p>
+              Analizamos el funcionamiento de las acciones realizadas
+              para detectar oportunidades de mejora y crecimiento.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about" id="nosotros">
+
+      <div class="section-container">
+
+        <div class="about-grid">
+
+          <div class="about-visual">
+
+            <div class="about-symbol">
+              DI
+            </div>
+
+          </div>
+
+
+          <div class="about-content">
+
+            <div class="section-label">
+              Sobre nosotros
+            </div>
+
+            <h2>
+              Ideas que se convierten
+              en <span>presencia digital.</span>
+            </h2>
+
+            <p>
+              En Diversión Instantánea creemos que una buena marca no
+              solamente necesita estar presente en internet: necesita
+              tener algo que decir.
+            </p>
+
+            <p>
+              Por eso combinamos creatividad, comunicación y marketing
+              digital para desarrollar propuestas que ayuden a nuestros
+              clientes a mostrarse de una manera clara, moderna y
+              profesional.
+            </p>
+
+            <div class="check-list">
+
+              <div class="check">
+                <div class="check-icon">✓</div>
+                <span>Estrategias adaptadas a cada negocio.</span>
+              </div>
+
+              <div class="check">
+                <div class="check-icon">✓</div>
+                <span>Contenido pensado para captar atención.</span>
+              </div>
+
+              <div class="check">
+                <div class="check-icon">✓</div>
+                <span>Comunicación clara y profesional.</span>
+              </div>
+
+              <div class="check">
+                <div class="check-icon">✓</div>
+                <span>Enfoque constante en la mejora.</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================== -->
+
+    <section id="proceso">
+
+      <div class="section-container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Nuestro proceso
+          </div>
+
+          <h2 class="section-title">
+            Simple, claro y
+            <span style="color:#f6c84c;">estratégico.</span>
+          </h2>
+
+          <p class="section-description">
+            Trabajamos de forma ordenada para entender tu negocio,
+            desarrollar una propuesta y llevarla al público correcto.
+          </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+          <div class="process-card">
+
+            <div class="number">01 — ANÁLISIS</div>
+
+            <h3>Conocemos tu proyecto</h3>
+
+            <p>
+              Entendemos tu negocio, tus objetivos, tu público y
+              aquello que querés conseguir.
+            </p>
+
+          </div>
+
+
+          <div class="process-card">
+
+            <div class="number">02 — ESTRATEGIA</div>
+
+            <h3>Diseñamos el plan</h3>
+
+            <p>
+              Definimos una estrategia de comunicación y publicidad
+              acorde a las necesidades de tu marca.
+            </p>
+
+          </div>
+
+
+          <div class="process-card">
+
+            <div class="number">03 — CREACIÓN</div>
+
+            <h3>Desarrollamos el contenido</h3>
+
+            <p>
+              Creamos piezas visuales, mensajes y campañas preparadas
+              para captar atención.
+            </p>
+
+          </div>
+
+
+          <div class="process-card">
+
+            <div class="number">04 — OPTIMIZACIÓN</div>
+
+            <h3>Medimos y mejoramos</h3>
+
+            <p>
+              Observamos el funcionamiento de las acciones y buscamos
+              oportunidades para optimizar continuamente.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BENEFITS
+    ========================== -->
+
+    <section class="benefits">
+
+      <div class="section-container">
+
+        <div class="benefits-box">
+
+          <div class="benefits-grid">
+
+            <div class="benefit">
+
+              <strong>01</strong>
+
+              <span>
+                Estrategias pensadas específicamente para cada marca.
+              </span>
+
+            </div>
+
+
+            <div class="benefit">
+
+              <strong>02</strong>
+
+              <span>
+                Creatividad aplicada a cada pieza y comunicación.
+              </span>
+
+            </div>
+
+
+            <div class="benefit">
+
+              <strong>03</strong>
+
+              <span>
+                Una visión integral de tu presencia digital.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta" id="contacto">
+
+      <div class="cta-box">
+
+        <div class="section-label">
+          Empecemos
+        </div>
+
+        <h2>
+          ¿Querés llevar tu marca
+          <span style="color:#19ff75;">al siguiente nivel?</span>
+        </h2>
+
+        <p>
+          Contanos qué hacés, qué necesitás y cuáles son tus objetivos.
+          Analizamos tu proyecto y buscamos una estrategia adecuada
+          para ayudarte a crecer en el mundo digital.
+        </p>
+
+        <!-- CAMBIAR EL NÚMERO DE WHATSAPP -->
+
+        <a
+          href="https://wa.me/5491100000000?text=Hola%20Diversión%20Instantánea!%20Quiero%20consultar%20por%20sus%20servicios."
+          target="_blank"
+          class="btn btn-primary"
+        >
+          💬 Hablar por WhatsApp
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAQ
+    ========================== -->
+
+    <section id="faq">
+
+      <div class="section-container">
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Preguntas frecuentes
+          </div>
+
+          <h2 class="section-title">
+            Algunas respuestas
+            antes de empezar.
+          </h2>
+
+        </div>
+
+
+        <div class="faq">
+
+          <details>
+
+            <summary>
+              ¿Qué tipo de negocios pueden trabajar con ustedes?
+            </summary>
+
+            <p>
+              Trabajamos con marcas, emprendimientos y proyectos que
+              buscan mejorar su presencia digital, comunicación,
+              contenido o estrategia publicitaria.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              ¿Trabajan con publicidad en redes sociales?
+            </summary>
+
+            <p>
+              Sí. Podemos ayudarte a desarrollar campañas y contenido
+              para diferentes plataformas digitales, siempre adaptando
+              la estrategia al objetivo de cada proyecto.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              ¿También crean contenido?
+            </summary>
+
+            <p>
+              Sí. Podemos desarrollar conceptos y piezas visuales
+              orientadas a redes sociales y campañas digitales.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              ¿Cómo comienzo?
+            </summary>
+
+            <p>
+              Simplemente contactanos y contanos brevemente qué hace
+              tu negocio, qué necesitás y qué objetivo querés alcanzar.
+              A partir de ahí podemos analizar el proyecto.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <div>
+
+        <div class="brand">
+
+          <div class="brand-icon">
+            D
+          </div>
+
+          <div class="brand-text">
+            Diversión <span>Instantánea</span>
+          </div>
+
+        </div>
+
+        <p class="footer-description">
+          Publicidad, marketing digital y creatividad.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="#servicios">Servicios</a>
+
+        <a href="#nosotros">Nosotros</a>
+
+        <a href="#proceso">Proceso</a>
+
+        <a href="#contacto">Contacto</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 Diversión Instantánea. Todos los derechos reservados.
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       WHATSAPP FLOATING BUTTON
+  ========================== -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/5491100000000?text=Hola!%20Quiero%20consultar%20por%20los%20servicios%20de%20Diversión%20Instantánea."
+    target="_blank"
+    aria-label="Contactar por WhatsApp"
+  >
+    💬
+  </a>
+
+
+  <script>
+
+    // Animación sencilla de aparición al hacer scroll
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    document
+      .querySelectorAll(
+        ".service-card, .process-card, .benefit, .about-content"
+      )
+      .forEach(element => {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(25px)";
+        element.style.transition = "opacity .7s ease, transform .7s ease";
+
+        observer.observe(element);
+
+      });
+
+  </script>
+
+</body>
+</html>
